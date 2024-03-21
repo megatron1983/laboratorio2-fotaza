@@ -1,0 +1,81 @@
+section {
+  width: 600px;
+  margin: 2rem auto;
+}
+
+.registrar {
+  border: 1px solid #258d62;
+  padding: 2rem 2rem;
+  margin-bottom: 2rem;
+}
+.registrar h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.registrar .grupo {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.registrar .subgrupo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 20px;
+}
+.registrar .subgrupo label,
+.registrar .subgrupo2 label {
+  display: block;
+  margin-bottom: 1rem;
+  color: aliceblue;
+  font-size: 1.3rem;
+}
+
+.subtitulo-form {
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+.check input {
+  margin-right: 1.2rem;
+}
+
+input[type="file" i] {
+  color: aliceblue;
+  padding: 0.5rem;
+}
+
+.subgrupo2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 2rem;
+}
+
+.btn-guardar {
+  margin-top: 3rem;
+  padding: 1rem 0rem;
+  background-color: #258d62;
+  color: aliceblue;
+}
+
+.btn-volver {
+  margin-top: 6rem;
+  padding: 1rem 1.5rem;
+  background-color: aliceblue;
+  color: #258d62;
+}
+
+.registrar input {
+  padding: 0.5rem;
+}
+
+.registrar select {
+  padding: 0.5rem;
+}
+
+.input-file {
+  padding: 0.5rem;
+}

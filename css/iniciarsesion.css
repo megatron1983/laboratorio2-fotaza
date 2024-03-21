@@ -1,0 +1,41 @@
+form {
+  margin: 2rem auto;
+  width: 300px;
+  border: 1px solid #258d62;
+  padding: 2rem 2rem;
+}
+
+label {
+  color: aliceblue;
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+input {
+  padding: 8.5px;
+}
+
+button {
+  padding: 8.5px;
+  margin-top: 1rem;
+  margin-top: 3rem;
+  padding: 1rem 0rem;
+  background-color: #258d62;
+  color: aliceblue;
+}
+
+button:hover {
+  background-color: aliceblue;
+  color: #258d62;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}

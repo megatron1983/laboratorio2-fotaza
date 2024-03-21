@@ -1,0 +1,151 @@
+/* Estilos generales*/
+* {
+  padding: 0; /*Relleno general igual 0 no hay espacio*/
+  margin: 0; /* Espacio entre el borde de la caja y borde de otra caja de otro elemento*/
+}
+
+header {
+  padding: 2rem 2rem; /*espacio arriba y a los costados*/
+  background-color: #0b1218;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+main {
+  margin-top: 12rem;
+}
+
+body {
+  background-color: #0b1218;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: aliceblue;
+}
+
+ul {
+  list-style: none; /* sacar los puntos a los "li" que son predeterminados*/
+}
+
+a {
+  text-decoration: none; /* sacar los subrayados a los "a" que son predeterminados*/
+  color: aliceblue;
+}
+
+.margin-top {
+  margin-top: 8rem;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.menu a img {
+  width: 100px;
+}
+
+.menu > li {
+  float: left;
+}
+.menu ul {
+  display: flex;
+  align-items: center; /* centrar todos los elemntos*/
+  justify-content: flex-end;
+}
+
+.menu ul > li {
+  margin: 0 2rem;
+}
+
+.menu ul li ul li {
+  padding: 7px 0px;
+  margin: 0 !important;
+}
+.menu li a {
+  display: block;
+}
+
+.menu ul li a {
+  font-size: 1.3rem;
+}
+
+.menu ul li ul li a {
+  background-color: #258d62;
+  padding: 10px 15px;
+}
+
+.menu ul li ul li a:hover {
+  color: #0b1218;
+}
+
+.menu ul li a:hover {
+  color: #258d62;
+}
+
+.menu li ul {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+}
+
+.menu li:hover > ul {
+  display: block;
+}
+
+.menu ul li ul {
+  padding-top: 1rem;
+}
+.boton-registrarse {
+  border: 3px solid #258d62;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  padding: 0.5rem 1.5rem;
+}
+
+.boton-registrarse:hover {
+  background-color: aliceblue;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+}
+
+footer {
+  border-top: #258d62 solid 1px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 6rem;
+}
+
+.text-center {
+  text-align: center;
+  color: aliceblue;
+}
+
+/*Estilos de inicio*/
+/*Banner*/
+
+.banner {
+  background-image: url("../img/background.jpg");
+  height: 500px;
+}
+
+.banner h1 {
+  padding-top: 12rem;
+  text-align: center;
+  font-size: 2.3rem;
+  color: aliceblue;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+}
