@@ -22,7 +22,7 @@ class UsuarioController extends ControladorBase
 
 		//Cargamos la vista index y le pasamos valores
 		$this->view(
-			"index",
+			"inicio",
 			array(
 				"allusers" => $allusers,
 				"UnaVariableDeLaVista" => "Valor de la Vista"
@@ -47,15 +47,15 @@ class UsuarioController extends ControladorBase
 			//Creamos un usuario
 			$usuario = new Usuario();
 			$usuario->setNombre($_POST["nombre"]);
-			$usuario->setApellido($_POST["apellido"]);
 			$usuario->setEmail($_POST["email"]);
+			$usuario->setContrasena($_POST["contrasena"]);
 
 			//al constructor de provincia le paso el id
 
-			$usuario->setPassword($_POST["password"]);
+			$usuario->setContrasena($_POST["contrasena"]);
 			$save = $usuario->save();
 		}
-		$this->redirect("Usuario", "index");
+		$this->redirect("Usuario", "inicio");
 	}
 
 	//Procesa el borrado de unUsuario
@@ -77,8 +77,6 @@ class UsuarioController extends ControladorBase
 		if (isset ($_GET["id"])) {
 			$id = (int) $_GET["id"];
 			//Conseguimos todos los usuarios
-			$provincia = new Provincia();
-			$allProvincias = $provincia->getAll();
 			//traemos todos los datos del usuario para mostrarlos en el formulario
 			$usuario = new Usuario();
 			$usuario = $usuario->getById($id);
@@ -86,7 +84,6 @@ class UsuarioController extends ControladorBase
 			$this->view(
 				"editar",
 				array(
-					"allProvincias" => $allProvincias,
 					"usuario" => $usuario
 				)
 			);
@@ -101,20 +98,25 @@ class UsuarioController extends ControladorBase
 			$usuario = new Usuario();
 			$usuario->setId($_POST["id"]);
 			$usuario->setNombre($_POST["nombre"]);
-			$usuario->setApellido($_POST["apellido"]);
 			$usuario->setEmail($_POST["email"]);
+			$usuario->setContrasena($_POST["contrasena"]);
 
-			//al constructor de provincia le paso el id
-			$provincia = new Provincia();
-			$provincia->setId($_POST["provincia"]);
-			$usuario->setProvincia($provincia);
+		
 
 			$save = $usuario->save();
 		}
-		$this->redirect("Usuario", "index");
+		$this->redirect("Usuario", "inicio");
 	}
 
+	public function autenticacion(){
+		$usuario = new Usuario();
+		$usuario->buscar();
 
+	}
+
+	public function login(){
+		$this->view("iniciarsesion", array());
+	}
 
 }
 ?>

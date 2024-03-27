@@ -31,14 +31,14 @@
                   <li><a href="deportesView.html">Deportes</a></li>
                </ul>
             </li>
-            <li><a href="iniciarsesionView.html">Iniciar Sesión</a></li>
+            <li><a href="index.php?controller=Usuario&action=crear">Iniciar Sesión</a></li>
             <li><a class="boton-registrarse" href="registrarView.html">Registrarse</a></li>
          </ul>
       </nav>
    </header>
    <main>
       <section>
-         <form action="" method="post" class="registrar">
+         <form action="index.php?controller=Usuario&action=crear" method="post" class="registrar">
             <h1>Añadir Usuario</h1>
             <div class="grupo">
                <div class="subgrupo">

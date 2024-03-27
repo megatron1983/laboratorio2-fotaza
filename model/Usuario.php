@@ -3,7 +3,7 @@ class Usuario extends EntidadBase{
     private $id;
     private $nombre;
     private $email;
-    private $password;
+    private $contrasena;
     
     public function __construct() {
         $table="usuarios";
@@ -26,14 +26,14 @@ class Usuario extends EntidadBase{
         $this->nombre = $nombre;
     }
 
-    public function getApellido() {
+   /*  public function getApellido() {
         return $this->apellido;
     }
 
     public function setApellido($apellido) {
         $this->apellido = $apellido;
     }
-
+ */
     public function getEmail() {
         return $this->email;
     }
@@ -42,33 +42,37 @@ class Usuario extends EntidadBase{
         $this->email = $email;
     }
 
-    public function getPassword() {
-        return $this->password;
+    /**
+     * Get the value of contrasena
+     */ 
+    public function getContrasena()
+    {
+        return $this->contrasena;
     }
 
-    public function setPassword($password) {
-        $this->password = $password;
+    /**
+     * Set the value of contrasena
+     *
+     * @return  self
+     */ 
+    public function setContrasena($contrasena)
+    {
+        $this->contrasena = $contrasena;
+
+        return $this;
     }
 
-    public function getProvincia() {
-        return $this->provincia;
-    }
-
-    public function setProvincia($provincia) {
-        $this->provincia = $provincia;
-    }
 
 	
     public function save(){
-		require_once "Provincia.php";
+		
 		
 		//verifico si el usuario se encuentra en la BD
 		//sino es null entonces UPDATE
 		//si es null entonces INSERT
 		if($this->id){
 			
-			$query= "UPDATE usuarios set nombre = '$this->nombre', apellido = '$this->apellido'
-			,email = '$this->email' ,provincia = ".$this->provincia->getId(). " where id = $this->id";
+			$query= "UPDATE usuarios set nombre = '$this->nombre',email = '$this->email' ,contrasena = ".$this->contrasena->getId(). " where id = $this->id";
 			
 			$save=$this->db()->query($query);
 			//$this->db()->error;
@@ -77,19 +81,26 @@ class Usuario extends EntidadBase{
 		}
 		else{
 					
-			$query= "INSERT INTO usuarios (id,nombre,apellido,email,password,provincia)
+			$query= "INSERT INTO usuarios (id,nombre,email,contrasena)
 					VALUES(NULL,
-						   '".$this->nombre."',
-						   '".$this->apellido."',
-						   '".$this->email."',
-						   '".$this->password."',
-						   ".$this->provincia->getId().");";
+                            '".$this->nombre."',
+                            '".$this->email."',
+                            '".$this->contrasena."'
+                            );";
 			$save=$this->db()->query($query);
 			//$this->db()->error;
 			return $save;
 		}	
     }
-	
+
+    public function buscar(){
+        $usuario = new Usuario();
+        $usuarioExiste = $usuario->getBy('email',$_POST['email']);
+        if(!empty($usuarioExiste)){
+            echo $usuarioExiste;
+        }
+        return $usuarioExiste;
+}
 
 }
 ?>
