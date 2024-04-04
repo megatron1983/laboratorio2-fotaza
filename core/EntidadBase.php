@@ -18,11 +18,10 @@ class EntidadBase{
     }
     
     public function getAll(){
-     
-        $query=$this->db()->query("SELECT * FROM $this->table ORDER BY id DESC");
+     $query=$this->db()->query("SELECT * FROM $this->table ORDER BY id DESC");
 
         while ($row = $query->fetch_object()) {
-           $resultSet[]=$row;
+            $resultSet[]=$row;
         }
         
         return $resultSet;
@@ -32,7 +31,7 @@ class EntidadBase{
         $query=$this->db()->query("SELECT * FROM $this->table WHERE id=$id");
 
         if($row = $query->fetch_object()) {
-           $resultSet=$row;
+            $resultSet=$row;
         }
         
         return $resultSet;
@@ -42,7 +41,7 @@ class EntidadBase{
         $query=$this->db()->query("SELECT * FROM $this->table WHERE $column='$value'");
 
         while($row = $query->fetch_object()) {
-           $resultSet[]=$row;
+            $resultSet[]=$row;
         }
         
         return $resultSet;

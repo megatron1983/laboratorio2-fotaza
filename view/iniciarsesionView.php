@@ -38,15 +38,15 @@
    </header>
    <main>
       <section>
-         <form action="index.php?controller=Usuario&action=autenticacion" method = "post">
+         <form action="index.php?controller=Usuario&action=autenticacion" method = "POST">
             <h1>Iniciar Sesión</h1>
             <div>
-               <label for="">Ingrese Correo</label>
-               <input type="email" name="" id="">
+               <label for="email">Ingrese Correo</label>
+               <input type="email" name="email" id="email">
             </div>
             <div>
-               <label for="">Ingrese Contraseña</label>
-               <input type="password" name="" id="">
+               <label for="contrasena">Ingrese Contraseña</label>
+               <input type="password" name="contrasena" id="contarsena">
             </div>
             <div>
                <button type="submit" name="">Iniciar Sesión</button>

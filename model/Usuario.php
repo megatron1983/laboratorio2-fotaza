@@ -26,7 +26,7 @@ class Usuario extends EntidadBase{
         $this->nombre = $nombre;
     }
 
-   /*  public function getApellido() {
+    /*  public function getApellido() {
         return $this->apellido;
     }
 
@@ -94,12 +94,10 @@ class Usuario extends EntidadBase{
     }
 
     public function buscar(){
-        $usuario = new Usuario();
-        $usuarioExiste = $usuario->getBy('email',$_POST['email']);
+        $usuarioExiste = $this->getBy('email',$_POST['email']);
         if(!empty($usuarioExiste)){
-            echo $usuarioExiste;
-        }
-        return $usuarioExiste;
+            return $usuarioExiste[0];
+        } else{return NULL;}
 }
 
 }

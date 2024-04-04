@@ -13,20 +13,10 @@ class UsuarioController extends ControladorBase
 	//Listar todos los Usuarios	
 	public function index()
 	{
-
-		//Creamos el objeto usuario
-		$usuario = new Usuario();
-
-		//Conseguimos todos los usuarios
-		$allusers = $usuario->getAll();
-
 		//Cargamos la vista index y le pasamos valores
 		$this->view(
 			"inicio",
-			array(
-				"allusers" => $allusers,
-				"UnaVariableDeLaVista" => "Valor de la Vista"
-			)
+			array()
 		);
 	}
 
@@ -110,10 +100,19 @@ class UsuarioController extends ControladorBase
 
 	public function autenticacion(){
 		$usuario = new Usuario();
-		$usuario->buscar();
-
+		$usuario = $usuario->buscar();
+		if($usuario != NULL){
+			if($usuario->contrasena == $_POST['contrasena']){ 
+				session_start();
+				$_SESSION['nombre'] = $usuario->nombre;
+				$_SESSION['email'] = $usuario->email;
+				// localhost/fotaza/index.php?controller=usuario&action=index
+				$this->redirect('usuario','index');
+			}
+		}
 	}
 
+	// localhost/fotaza/index.php?controller=usuario&action=login
 	public function login(){
 		$this->view("iniciarsesion", array());
 	}
