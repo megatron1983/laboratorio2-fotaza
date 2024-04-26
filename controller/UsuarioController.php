@@ -39,13 +39,22 @@ class UsuarioController extends ControladorBase
 			$usuario->setNombre($_POST["nombre"]);
 			$usuario->setEmail($_POST["email"]);
 			$usuario->setContrasena($_POST["contrasena"]);
-
-			//al constructor de provincia le paso el id
-
-			$usuario->setContrasena($_POST["contrasena"]);
 			$save = $usuario->save();
+			echo '<pre>';
+			var_dump($save);
+			print_r($save);
+			echo '</pre>';
+			// $usuario->deleteById()
+			
+			$listaIntereses = new ListaInteres();
+			// $listaIntereses->setCategoriaId($_POST["id"]);
+			$listaIntereses->setCategoriaId(5);
+			// $listaIntereses->setUsuarioId($save);
+			$listaIntereses->setUsuarioId(5);
+			// $listaIntereses->save();
+
 		}
-		$this->redirect("Usuario", "inicio");
+			// $this->redirect("Usuario", "inicio");
 	}
 
 	//Procesa el borrado de unUsuario

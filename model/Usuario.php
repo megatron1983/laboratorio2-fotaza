@@ -57,6 +57,7 @@ class Usuario extends EntidadBase{
      */ 
     public function setContrasena($contrasena)
     {
+        // password_hash()
         $this->contrasena = $contrasena;
 
         return $this;
@@ -88,6 +89,7 @@ class Usuario extends EntidadBase{
                             '".$this->contrasena."'
                             );";
 			$save=$this->db()->query($query);
+            c
 			//$this->db()->error;
 			return $save;
 		}	

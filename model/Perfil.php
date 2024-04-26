@@ -7,7 +7,7 @@ class Perfil extends EntidadBase{
 
     
     public function __construct() {
-        $table="usuarios";
+        $table="perfiles";
         parent::__construct($table);
     }
     
