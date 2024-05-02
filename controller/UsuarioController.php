@@ -32,6 +32,7 @@ class UsuarioController extends ControladorBase
 	//Procesa los datos del formulario de inserción
 	public function crear()
 	{
+		//La sigiente función guarda los datos en la BD
 		if (isset ($_POST["nombre"])) {
 
 			//Creamos un usuario
