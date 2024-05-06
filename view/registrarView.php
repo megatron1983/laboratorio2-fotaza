@@ -43,17 +43,17 @@
             <div class="grupo">
                <div class="subgrupo">
                   <label for="nombre">Nombre:</label>
-                  <input type="text" name="nombre" minlength="5" class="form-control" required />
+                  <input id="nombre" type="text" name="nombre" minlength="5" class="form-control" required />
                </div>
                <div class="subgrupo">
                   <label for="apellido">Apellido:</label>
-                  <input type="text" name="apellido" minlength="5" class="form-control" />
+                  <input id="apellido" type="text" name="apellido" minlength="5" class="form-control" />
                </div>
             </div>
             <div class="grupo">
                <div class="subgrupo">
                   <label for="sexo">Seleccione su sexo</label>
-                  <select class="form-select form-control" name="sexo" aria-label="Default select example">
+                  <select id="sexo" class="form-select form-control" name="sexo" aria-label="Default select example">
                      <option value="Masculino">Masculino</option>
                      <option value="Femenino">Femenino</option>
                      <option value="No Binario">No Binario</option>
@@ -61,31 +61,31 @@
                </div>
                <div class="subgrupo">
                   <label for="foto">Foto de Perfil</label>
-                  <input class="input-file" type="file" name="foto">
+                  <input id="foto" class="input-file" type="file" name="foto">
                </div>
             </div>
             <div class="subgrupo2 check">
                <h4 class="subtitulo-form">Elige tus intereses</h4>
-               <label for=""><input type="checkbox">Cumpleaños de 15</label>
-               <label for=""><input type="checkbox">Casamiento</label>
-               <label for=""><input type="checkbox">Gourmet</label>
-               <label for=""><input type="checkbox">Paisaje</label>
-               <label for=""><input type="checkbox">Deporte</label>
-               <label for=""><input type="checkbox">Arte</label>
+               <label for="cumple15"><input id="cumple15"  type="checkbox" name="categoria[]">Cumpleaños de 15</label>
+               <label for="casamiento"><input id="casamiento" type="checkbox" name="categoria[]">Casamiento</label>
+               <label for="gourmet"><input id="gourmet" type="checkbox" name="categoria[]">Gourmet</label>
+               <label for="paisaje"><input id="paisaje" type="checkbox" name="categoria[]">Paisaje</label>
+               <label for="deporte"><input id="deporte" type="checkbox" name="categoria[]">Deporte</label>
+               <label for="arte"><input id="arte" type="checkbox" name="categoria[]">Arte</label>
 
 
             </div>
             <div class="subgrupo2">
                <label for="email">Email:</label>
-               <input value="" type="text" name="email" minlength="5" class="form-control" required />
+               <input id="email" value="" type="text" name="email" minlength="5" class="form-control" required />
             </div>
             <div class="subgrupo2">
                <label for="contrasena">Contraseña:</label>
-               <input value="" type="password" name="contrasena" minlength="5" class="form-control" required />
+               <input id="contrasena" value="" type="password" name="contrasena" minlength="5" class="form-control" required />
             </div>
             <div class="subgrupo2">
-               <label for="confirmarContrasena">Confirmar Contraseña:</label> <input value="" type="password"
-                  name="confirmarContrasena" minlength="5" class="form-control" required />
+               <label for="confirmarContrasena">Confirmar Contraseña:</label> 
+               <input id="confirmarContrasena" value="" type="password" name="confirmarContrasena" minlength="5" class="form-control" required />
 
                <input type="submit" value="Guardar" class="btn-guardar" />
             </div>

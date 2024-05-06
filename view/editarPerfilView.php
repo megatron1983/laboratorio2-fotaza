@@ -62,12 +62,12 @@
             </div>
             <div class="subgrupo2 check">
                <h4 class="subtitulo-form">Elige tus intereses</h4>
-               <label for=""><input type="checkbox">Cumpleaños de 15</label>
-               <label for=""><input type="checkbox">Casamiento</label>
-               <label for=""><input type="checkbox">Gourmet</label>
-               <label for=""><input type="checkbox">Paisaje</label>
-               <label for=""><input type="checkbox">Deporte</label>
-               <label for=""><input type="checkbox">Arte</label>
+               <label for="cumple15"><input id="cumple15"  type="checkbox" name="categoria[]">Cumpleaños de 15</label>
+               <label for="casamiento"><input id="casamiento" type="checkbox" name="categoria[]">Casamiento</label>
+               <label for="gourmet"><input id="gourmet" type="checkbox" name="categoria[]">Gourmet</label>
+               <label for="paisaje"><input id="paisaje" type="checkbox" name="categoria[]">Paisaje</label>
+               <label for="deporte"><input id="deporte" type="checkbox" name="categoria[]">Deporte</label>
+               <label for="arte"><input id="arte" type="checkbox" name="categoria[]">Arte</label>
             </div>
             <div class="subgrupo2">
                <label for="email">Email:</label>
